@@ -2,7 +2,7 @@
   "name": "berles-boolean-skill-map",
   "version": "0.1.0",
   "description": "D3 skills maps that represent a custom developer roadmap version of https://roadmap.sh",
-  "main": "index.js",
+  "main": "dist/skillsMap.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production"

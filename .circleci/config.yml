@@ -49,7 +49,7 @@ jobs:
       - <<: *install_node_modules
       - <<: *save_cache
       - run:
-          name: Building artifact using ng build
+          name: Building artifact using npm run build
           command: npm run build
       - <<: *store_dist
   
