@@ -1,0 +1,82 @@
+version: 2.1
+aliases:
+  restore_cache: &restore_cache
+    restore_cache:
+      name: Restore Npm Package Cache
+      keys:
+        - v1-dependencies-{{ checksum "package.json" }}
+
+  save_cache: &save_cache
+    save_cache:
+      name: Save NPM modules cache
+      paths:
+        - ~/.npm
+        - ~/.cache
+      key: v1-dependencies-{{ checksum "package.json" }}
+
+  store_dist: &store_dist
+    save_cache:
+      name: Save dist folder
+      paths:
+        - ./
+      key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+  
+  restore_dist: &restore_dist
+    restore_cache:
+      name: Restore built dist folder
+      keys:
+        - v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+
+  install_node_modules: &install_node_modules
+    run:
+      name: Install local dependencies
+      command: npm ci
+
+  show_current_branch: &show_current_branch
+    run:
+      name: Show current branch
+      command: echo ${CIRCLE_BRANCH}
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:12
+    working_directory: ~/lib
+    steps:
+      - checkout
+      - <<: *show_current_branch
+      - <<: *restore_cache
+      - <<: *install_node_modules
+      - <<: *save_cache
+      - run:
+          name: Building artifact using ng build
+          command: npm run build
+      - <<: *store_dist
+  
+  publish:
+    docker:
+      - image: circleci/node:12
+    working_directory: ~/lib
+    steps:
+      - checkout
+      - <<: *show_current_branch
+      - <<: *restore_dist
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$AUTH_TOKEN" > ~/lib/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish
+
+workflows:
+  version: 2
+  berles-boolean-pipeline:
+    jobs:
+      - build
+      - publish:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
