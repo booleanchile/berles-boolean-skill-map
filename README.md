@@ -120,6 +120,13 @@ function SkillsMap() {
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-<!-- markdownlint-enable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/gpincheiraa"><img src="https://avatars0.githubusercontent.com/u/5608336?v=4?s=100" width="100px;" alt=""/><br /><sub><b>gpincheiraa</b></sub></a><br /><a href="https://github.com/booleanchile/berles-boolean-skill-map/commits?author=gpincheiraa" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/booleanchile"><img src="https://avatars2.githubusercontent.com/u/46203382?v=4?s=100" width="100px;" alt=""/><br /><sub><b>booleanchile</b></sub></a><br /><a href="https://github.com/booleanchile/berles-boolean-skill-map/commits?author=booleanchile" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
