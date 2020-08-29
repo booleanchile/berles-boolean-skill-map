@@ -105,9 +105,9 @@ workflows:
               only:
                 - master
       - update-repository:
-        requires:
-          - publish
-        filters:
-          branches:
-            only:
-              - master
+          requires:
+            - publish
+          filters:
+            branches:
+              only:
+                - master
