@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Acá va el gráfico</h1>
+  <div style="text-align: 'center';">
+    <svg height="800" width="800">
+      <g height={800} width={800} transform="translate(400,400)""
+      ></g>
+    </svg>
+  </div>
+
+  <script src="./skillsMap.js"></script>
+  <script>
+    const formData = {
+      'Internet': [1, 1, 1, 2, 3],
+      'Backend': [1, 1, 0, 0, 0],
+      'Programación': [1, 1, 3, 0, 0],
+      'Control Versiones': [1, 1, 2, 3, 0],
+      'HTML y A11y': [1, 1, 1, 2, 3],
+      'CSS': [1, 1, 1, 2, 3],
+      'Javascript': [1, 1, 3, 0, 0],
+      'Testing': [1, 1, 3, 0, 0],
+      'Performance': [1, 1, 0, 0, 0],
+      'Devops': [1, 1, 1, 0, 0],
+      'Arquitectura': [1, 3, 0, 0, 0]
+    };
+    const skillsMapTarget = document.querySelector('svg > g');
+    const onClickSegment = (segmentName, levelsData) => {
+      console.log(segmentName, levelsData);
+    };
+
+    window.skillsMap.createSpiderChart(
+      skillsMapTarget,
+      formData,
+      { onClickSegment }
+    );
+  </script>
+</body>
+</html>
