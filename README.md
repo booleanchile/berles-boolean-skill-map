@@ -21,7 +21,8 @@ Demo available in https://booleanchile.github.io/berles-boolean-skill-map/
 npm install berles-boolean-skill-map
 ```
 
-## Usage
+## Usage
+
 
 #### UMD usage
 
@@ -115,3 +116,17 @@ function SkillsMap() {
 }
 
 ```
+### Contributors
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/nicoavila"><img src="https://avatars0.githubusercontent.com/u/602639?v=4" width="100px;" alt=""/><br /><sub><b>nicoavila</b></sub></a><br /><a href="https://github.com/ngChile/ngchile-packages/commits?author=nicoavila" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/gpincheiraa"><img src="https://avatars0.githubusercontent.com/u/5608336?v=4" width="100px;" alt=""/><br /><sub><b>gpincheiraa</b></sub></a><br /><a href="https://github.com/ngChile/ngchile-packages/commits?author=gpincheiraa" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
