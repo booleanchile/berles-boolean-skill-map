@@ -22,7 +22,7 @@ npm install berles-boolean-skill-map
 ```
 
 ## Usage
-
+This library is compatible as UMD module or ES6 module.
 
 #### UMD usage
 
