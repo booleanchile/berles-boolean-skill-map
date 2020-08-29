@@ -12,11 +12,15 @@
 
 D3 skills maps that represent a custom developer roadmap version of https://roadmap.sh
 
+## Demo
+Demo available in https://booleanchile.github.io/berles-boolean-skill-map/
+
 ## Installation
 
 ```
 npm install berles-boolean-skill-map
 ```
+
 ## Usage
 
 #### UMD usage
