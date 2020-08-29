@@ -16,7 +16,7 @@
     </svg>
   </div>
 
-  <script src="./skillsMap.js"></script>
+  <script src="https://unpkg.com/berles-boolean-skill-map@latest/umd/skillsMap.js"></script>
   <script>
     const formData = {
       'Internet': [1, 1, 1, 2, 3],
@@ -35,8 +35,8 @@
     const onClickSegment = (segmentName, levelsData) => {
       console.log(segmentName, levelsData);
     };
-
-    window.skillsMap.createSpiderChart(
+    // UMD package it is available in window.skillsMap global variable
+    window.SkillsMap.createSpiderChart(
       skillsMapTarget,
       formData,
       { onClickSegment }

@@ -9,7 +9,6 @@ module.exports = (env, options) => {
   const isProductionMode = (options.mode === 'production')
 
   const src = path.resolve('./src')
-  const dist = path.resolve('./dist')
 
   let webpackConfig = {
     entry: {
@@ -18,9 +17,10 @@ module.exports = (env, options) => {
       ]
     },
     output: {
-      library: 'skillsMap',
+      library: 'SkillsMap',
       libraryTarget: 'umd',
       filename: 'skillsMap.js',
+      path: path.resolve(__dirname, 'umd')
     },
     plugins: [
       new CleanWebpackPlugin(),
