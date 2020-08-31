@@ -93,7 +93,11 @@ const createSpiderChart = (node, data, options = { onClickSegment: () => {} }) =
       .select(node)
       .append("g")
       .attr("class", segmentID)
-      .on("click", () => handleArcClick(segmentName, data[segmentName]))
+      .attr("role","listitem")
+      .attr("aria-label", segmentName)
+      .on("click", () => {
+        handleArcClick(segmentName, data[segmentName])
+      })
       .on("mouseover", function (d, i) {
         d3.select(this).style("transform", "scale(1.1,1.1)");
       })
@@ -201,8 +205,10 @@ const createSpiderChart = (node, data, options = { onClickSegment: () => {} }) =
       .style("text-anchor", "middle")
       .text(Object.keys(data)[j - 1]);
   }
-
-  return skillsMapNode;
+  /*
+    should return entire chart
+  */
+  return skillsMapNode.node().parentNode;
 };
 
 export {
