@@ -46,6 +46,19 @@ aliases:
       command: echo ${CIRCLE_BRANCH}
 
 jobs:
+  unit-tests:
+    docker:
+      - image: circleci/node:12
+    working_directory: ~/lib
+    steps:
+      - checkout
+      - <<: *show_current_branch
+      - <<: *restore_cache
+      - <<: *install_node_modules
+      - <<: *save_cache
+      - run:
+          name: Running unit tests
+          command: npm run test:ci
   build:
     docker:
       - image: circleci/node:12
@@ -96,6 +109,7 @@ workflows:
   version: 2
   berles-boolean-pipeline:
     jobs:
+      - unit-tests
       - build
       - publish:
           requires:

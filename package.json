@@ -1,10 +1,11 @@
 {
   "name": "berles-boolean-skill-map",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "D3 skills maps that represent a custom developer roadmap version of https://roadmap.sh",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage --watch",
+    "test:ci": "jest --ci --reporters=default --reporters=jest-junit --coverage",
     "build": "webpack --mode production",
     "update-contributors": "all-contributors generate"
   },
@@ -28,11 +29,17 @@
     "url": "https://github.com/booleanchile/berles-boolean-skill-map/issues"
   },
   "homepage": "https://github.com/booleanchile/berles-boolean-skill-map#readme",
+  "dependencies": {
+    "d3": "^6.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.11.0",
+    "@testing-library/dom": "^7.23.0",
     "all-contributors-cli": "^6.17.2",
     "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -44,6 +51,8 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "jest": "^26.4.2",
+    "jest-junit": "^10.0.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "node-watch": "^0.6.3",
@@ -55,7 +64,8 @@
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9"
   },
-  "dependencies": {
-    "d3": "^6.0.0"
+  "jest-junit": {
+    "outputDirectory": "./test-results/junit",
+    "outputName": "results.xml"
   }
 }

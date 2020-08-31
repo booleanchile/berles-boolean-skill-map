@@ -31,8 +31,7 @@ This library is compatible as UMD module or ES6 module.
   <h1>Acá va el gráfico</h1>
   <div style="text-align: 'center';">
     <svg height="800" width="800">
-      <g height={800} width={800} transform="translate(400,400)""
-      ></g>
+      <g height="800" width="800" transform="translate(400,400)"></g>
     </svg>
   </div>
 
